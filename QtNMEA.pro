@@ -51,13 +51,13 @@ HEADERS += \
 FORMS += \
         ReceiverWindow.ui
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../libnmea-cpp/x64/release/ -llibnmea-cpp
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../libnmea-cpp/x64/debug/ -llibnmea-cpp
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/libnmea-cpp/x64/Release/ -llibnmea-cpp
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/libnmea-cpp/x64/Debug/ -llibnmea-cpp
 
-INCLUDEPATH += $$PWD/../libnmea-cpp/libnmea-cpp/Public
-DEPENDPATH += $$PWD/../libnmea-cpp/libnmea-cpp/Public
+INCLUDEPATH += $$PWD/libnmea-cpp/libnmea-cpp/Public
+DEPENDPATH += $$PWD/libnmea-cpp/libnmea-cpp/Public
 
-win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../libnmea-cpp/x64/release/liblibnmea-cpp.a
-else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../libnmea-cpp/x64/debug/liblibnmea-cpp.a
-else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../libnmea-cpp/x64/release/libnmea-cpp.lib
-else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../libnmea-cpp/x64/debug/libnmea-cpp.lib
+win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/libnmea-cpp/x64/Release/liblibnmea-cpp.a
+else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/libnmea-cpp/x64/Debug/liblibnmea-cpp.a
+else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/libnmea-cpp/x64/Release/libnmea-cpp.lib
+else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/libnmea-cpp/x64/Debug/libnmea-cpp.lib

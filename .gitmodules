@@ -1,0 +1,3 @@
+[submodule "libnmea-cpp"]
+	path = libnmea-cpp
+	url = https://github.com/rainlabs/libnmea-cpp
