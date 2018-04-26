@@ -34,6 +34,8 @@ public:
     virtual void Bind(const GPSDataAdapter& oDataAdapter, const ReceiverWindow& oWindow) = 0;
     // Info string, just for visualization
     virtual QString GetInfo() const = 0;
+    // Ready or not
+    virtual bool IsValid() const = 0;
 
 protected:
     explicit UDPInterface(QObject *parent = nullptr) : QObject(parent) {}

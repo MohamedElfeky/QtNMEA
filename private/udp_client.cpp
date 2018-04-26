@@ -27,6 +27,11 @@ void UDPClient::Bind(const GPSDataAdapter &oDataAdapter, const ReceiverWindow &o
     QObject::connect(&oWindow, SIGNAL(SentenceSend(QString)), this, SLOT(SendMessage(QString)));
 }
 
+bool UDPClient::IsValid() const
+{
+    return UDPBase::IsValid();
+}
+
 bool UDPClient::SendMessage(const QString &sMessage)
 {
     if (!m_pSocket || sMessage.isEmpty()) return false;

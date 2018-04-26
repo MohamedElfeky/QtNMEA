@@ -32,7 +32,8 @@ SOURCES += \
     private/udp_dummy.cpp \
     udp_interface.cpp \
     private/udp_server.cpp \
-    private/udp_base.cpp
+    private/udp_base.cpp \
+    configuration.cpp
 
 HEADERS += \
         ReceiverWindow.h \
@@ -44,7 +45,8 @@ HEADERS += \
     private/udp_dummy.h \
     udp_interface.h \
     private/udp_server.h \
-    private/udp_base.h
+    private/udp_base.h \
+    configuration.h
 
 FORMS += \
         ReceiverWindow.ui

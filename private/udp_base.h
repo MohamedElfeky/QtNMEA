@@ -20,6 +20,7 @@ public:
     UDPBase();
     virtual ~UDPBase(){}
     bool Connect(const QString& sAddress, const QString& sPort);
+    bool IsValid() const;
 
 protected:
     QUdpSocketPtr m_pSocket;

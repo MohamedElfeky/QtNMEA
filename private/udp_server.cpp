@@ -32,6 +32,11 @@ void UDPServer::Bind(const GPSDataAdapter &oDataAdapter, const ReceiverWindow &o
     QObject::connect(this, SIGNAL(OnMessageReceived(QString)), &oDataAdapter, SLOT(ReceiveSentence(QString)));
 }
 
+bool UDPServer::IsValid() const
+{
+    return UDPBase::IsValid();
+}
+
 void UDPServer::ReadSocket()
 {
     if(!m_pSocket) return;

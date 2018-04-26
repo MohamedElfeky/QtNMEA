@@ -164,9 +164,9 @@
    <widget class="QLabel" name="labelTimeTitle">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>60</x>
       <y>130</y>
-      <width>141</width>
+      <width>331</width>
       <height>21</height>
      </rect>
     </property>
@@ -188,9 +188,9 @@
    <widget class="QLabel" name="labelTime">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>400</x>
       <y>130</y>
-      <width>541</width>
+      <width>311</width>
       <height>21</height>
      </rect>
     </property>
@@ -212,9 +212,9 @@
    <widget class="QLabel" name="labelLatitude">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>400</x>
       <y>150</y>
-      <width>541</width>
+      <width>311</width>
       <height>21</height>
      </rect>
     </property>
@@ -236,9 +236,9 @@
    <widget class="QLabel" name="labelLatitudeTitle">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>60</x>
       <y>150</y>
-      <width>141</width>
+      <width>331</width>
       <height>21</height>
      </rect>
     </property>
@@ -260,9 +260,9 @@
    <widget class="QLabel" name="labelLongitudeTitle">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>60</x>
       <y>170</y>
-      <width>141</width>
+      <width>331</width>
       <height>21</height>
      </rect>
     </property>
@@ -284,9 +284,9 @@
    <widget class="QLabel" name="labelLongitude">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>400</x>
       <y>170</y>
-      <width>541</width>
+      <width>311</width>
       <height>21</height>
      </rect>
     </property>
@@ -308,9 +308,9 @@
    <widget class="QLabel" name="labelGPSQuality">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>400</x>
       <y>190</y>
-      <width>541</width>
+      <width>311</width>
       <height>21</height>
      </rect>
     </property>
@@ -334,7 +334,7 @@
      <rect>
       <x>60</x>
       <y>190</y>
-      <width>161</width>
+      <width>331</width>
       <height>21</height>
      </rect>
     </property>
@@ -356,9 +356,9 @@
    <widget class="QLabel" name="labelSatellitesTitle">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>60</x>
       <y>210</y>
-      <width>141</width>
+      <width>331</width>
       <height>21</height>
      </rect>
     </property>
@@ -368,7 +368,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Satellites:</string>
+     <string>Number Satellites in use:</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -380,9 +380,9 @@
    <widget class="QLabel" name="labelSatellites">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>400</x>
       <y>210</y>
-      <width>541</width>
+      <width>311</width>
       <height>21</height>
      </rect>
     </property>
@@ -404,9 +404,9 @@
    <widget class="QLabel" name="labelHorDilution">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>400</x>
       <y>230</y>
-      <width>541</width>
+      <width>311</width>
       <height>21</height>
      </rect>
     </property>
@@ -428,9 +428,9 @@
    <widget class="QLabel" name="labelHorDilutionTitle">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>60</x>
       <y>230</y>
-      <width>141</width>
+      <width>331</width>
       <height>21</height>
      </rect>
     </property>
@@ -440,7 +440,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Horizontal Dilution:</string>
+     <string>Horizontal Dilution of Precision:</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -452,9 +452,9 @@
    <widget class="QLabel" name="labelAntennaTitle">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>60</x>
       <y>250</y>
-      <width>141</width>
+      <width>331</width>
       <height>21</height>
      </rect>
     </property>
@@ -464,7 +464,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Antenna Altitude:</string>
+     <string>Antenna Altitude above/below:</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -476,9 +476,9 @@
    <widget class="QLabel" name="labelAntenna">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>400</x>
       <y>250</y>
-      <width>541</width>
+      <width>311</width>
       <height>21</height>
      </rect>
     </property>
@@ -500,9 +500,9 @@
    <widget class="QLabel" name="labelGeoidal">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>400</x>
       <y>270</y>
-      <width>541</width>
+      <width>311</width>
       <height>21</height>
      </rect>
     </property>
@@ -524,9 +524,9 @@
    <widget class="QLabel" name="labelGeoidalTitle">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>60</x>
       <y>270</y>
-      <width>141</width>
+      <width>331</width>
       <height>21</height>
      </rect>
     </property>
@@ -548,9 +548,9 @@
    <widget class="QLabel" name="labelDataAge">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>400</x>
       <y>290</y>
-      <width>541</width>
+      <width>311</width>
       <height>21</height>
      </rect>
     </property>
@@ -572,9 +572,9 @@
    <widget class="QLabel" name="labelDataAgeTitle">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>60</x>
       <y>290</y>
-      <width>141</width>
+      <width>331</width>
       <height>21</height>
      </rect>
     </property>
@@ -584,7 +584,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Age of GPS data:</string>
+     <string>Age of differential GPS data:</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -598,7 +598,7 @@
      <rect>
       <x>60</x>
       <y>310</y>
-      <width>161</width>
+      <width>331</width>
       <height>21</height>
      </rect>
     </property>
@@ -608,7 +608,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Reference Station ID:</string>
+     <string>Differential Reference Station ID:</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -620,9 +620,9 @@
    <widget class="QLabel" name="labelStation">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>400</x>
       <y>310</y>
-      <width>541</width>
+      <width>311</width>
       <height>21</height>
      </rect>
     </property>
@@ -672,6 +672,42 @@
     </property>
     <property name="text">
      <string>SEND</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelMode">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>10</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(214, 222, 243);
+border-color: rgb(255, 255, 255);
+border-style: inset;
+border-width: 2px;</string>
+    </property>
+    <property name="text">
+     <string>Standalone mode</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="textInteractionFlags">
+     <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
     </property>
    </widget>
   </widget>

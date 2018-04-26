@@ -13,6 +13,7 @@ ReceiverWindow::ReceiverWindow(QWidget *parent) :
     ui(new Ui::ReceiverWindow)
 {
     ui->setupUi(this);
+    setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint);
 }
 
 ReceiverWindow::~ReceiverWindow()
@@ -20,11 +21,25 @@ ReceiverWindow::~ReceiverWindow()
     delete ui;
 }
 
+void ReceiverWindow::SetLabelMode(const QString &sMode)
+{
+    ui->labelMode->setText(sMode);
+}
+
+void ReceiverWindow::HideSendBlock(ApplicationMode eMode)
+{
+    if (eMode != ApplicationMode::SERVER) return;
+
+    ui->editSentence->hide();
+    ui->btnSend->hide();
+}
+
 void ReceiverWindow::GPSDataChanged(const GPSDataAdapter& oData)
 {
     ui->labelSentence->setText(oData.GetSentence());
     ui->labelStatus->setText(SUCCESS);
     ui->labelFailure->setText(OK);
+    ui->labelStatus->setStyleSheet("QLabel { background-color: green; color: white; }");
 
     ui->labelTime->setText(oData.GetTime().toString("hh:mm:ss.zzz"));
     ui->labelLatitude->setText(oData.GetLatitude());
@@ -43,6 +58,7 @@ void ReceiverWindow::GPSDataParseError(const QString &sWhat, const QString &sSen
     ui->labelSentence->setText(sSentence);
     ui->labelStatus->setText(FAILURE);
     ui->labelFailure->setText(sWhat);
+    ui->labelStatus->setStyleSheet("QLabel { background-color: red; color: white; }");
 
     ClearDataLabels();
 }

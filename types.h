@@ -7,7 +7,7 @@
 #ifndef TYPES_H
 #define TYPES_H
 
-enum class ApplicationMode : uint8_t
+enum class ApplicationMode
 {
     STANDALONE,
     SERVER,

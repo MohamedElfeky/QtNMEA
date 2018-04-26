@@ -17,6 +17,7 @@ public:
     virtual bool Initialize(const QString& sAddress, const QString& sPort) override;
     virtual void Bind(const GPSDataAdapter& oDataAdapter, const ReceiverWindow& oWindow) override;
     inline virtual QString GetInfo() const override;
+    virtual bool IsValid() const override;
 
 signals:
     // Fired when message readed from socket

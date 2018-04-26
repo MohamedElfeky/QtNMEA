@@ -8,28 +8,24 @@
 #include <QApplication>
 #include "gpsdata_adapter.h"
 #include "udp_interface.h"
-#include <QDebug>
+#include "configuration.h"
 
 int main(int argc, char *argv[])
 {
+    Configuration oConfig(argc, argv);
     QApplication a(argc, argv);
     ReceiverWindow oWindow;
     oWindow.show();
 
-    ApplicationMode eMode = ApplicationMode::STANDALONE;
-    for(int i = 0; i < argc; i++) {
-        if(QString(argv[i]) == "-m") {
-            eMode = ApplicationMode::CLIENT;
-            qDebug() << "run in client mode";
-        }
-    }
-
-    UDPInterfacePtr pUdpService = UDPInterface::CreateInstance(eMode);
+    UDPInterfacePtr pUdpService = UDPInterface::CreateInstance(oConfig.GetMode());
     if (!pUdpService) return 1;
 
     GPSDataAdapter oGPSData;
-    pUdpService->Initialize("127.0.0.1", "1234");
+    pUdpService->Initialize(oConfig.GetAddress(), oConfig.GetPort());
     pUdpService->Bind(oGPSData, oWindow);
+
+    oWindow.SetLabelMode( pUdpService->GetInfo() );
+    oWindow.HideSendBlock( oConfig.GetMode() );
 
     return a.exec();
 }

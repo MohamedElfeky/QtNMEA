@@ -9,6 +9,7 @@
 
 #include <QMainWindow>
 #include "gpsdata_adapter.h"
+#include "types.h"
 
 namespace Ui {
 class ReceiverWindow;
@@ -21,6 +22,8 @@ class ReceiverWindow : public QMainWindow
 public:
     explicit ReceiverWindow(QWidget *parent = 0);
     ~ReceiverWindow();
+    void SetLabelMode(const QString& sMode);
+    void HideSendBlock(ApplicationMode eMode = ApplicationMode::STANDALONE);
 
 signals:
     void SentenceSend(const QString& sSentence);

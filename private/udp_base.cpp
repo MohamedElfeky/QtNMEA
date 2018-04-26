@@ -9,7 +9,7 @@
 
 UDPBase::UDPBase() :
     m_pSocket(nullptr),
-    m_oAddress(QHostAddress::Any),
+    m_oAddress(QHostAddress::LocalHost),
     m_uPort(0)
 {
 }
@@ -26,5 +26,10 @@ bool UDPBase::Connect(const QString &sAddress, const QString &sPort)
     }
 
     return m_pSocket->bind(m_oAddress, m_uPort);
+}
+
+bool UDPBase::IsValid() const
+{
+    return m_pSocket && m_pSocket->isValid();
 }
 
