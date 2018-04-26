@@ -28,15 +28,23 @@ SOURCES += \
         ReceiverWindow.cpp \
     gpsdata_adapter.cpp \
     utils.cpp \
-    udp_service.cpp
+    private/udp_client.cpp \
+    private/udp_dummy.cpp \
+    udp_interface.cpp \
+    private/udp_server.cpp \
+    private/udp_base.cpp
 
 HEADERS += \
         ReceiverWindow.h \
     gpsdata_adapter.h \
     strings.h \
     utils.h \
-    udp_service.h \
-    types.h
+    types.h \
+    private/udp_client.h \
+    private/udp_dummy.h \
+    udp_interface.h \
+    private/udp_server.h \
+    private/udp_base.h
 
 FORMS += \
         ReceiverWindow.ui
