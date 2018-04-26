@@ -1,3 +1,9 @@
+/*
+ * Qt Wrap of NMEA-CPP library, send/receive sentence
+ * @author Vladimir Ziablitskii
+ * Copyright 2018, All rights reserved
+ */
+
 #include "udp_base.h"
 #include "utils.h"
 

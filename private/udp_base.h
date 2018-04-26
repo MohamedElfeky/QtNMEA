@@ -1,3 +1,9 @@
+/*
+ * Qt Wrap of NMEA-CPP library, send/receive sentence
+ * @author Vladimir Ziablitskii
+ * Copyright 2018, All rights reserved
+ */
+
 #ifndef UDP_BASE_H
 #define UDP_BASE_H
 
@@ -5,6 +11,9 @@
 
 typedef QSharedPointer<QUdpSocket> QUdpSocketPtr;
 
+/*
+ * Class provides base connection to UDP socket
+ */
 class UDPBase
 {
 public:
