@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -26,12 +26,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         ReceiverWindow.cpp \
-    gpsdata_adapter.cpp
+    gpsdata_adapter.cpp \
+    utils.cpp \
+    udp_service.cpp
 
 HEADERS += \
         ReceiverWindow.h \
     gpsdata_adapter.h \
-    strings.h
+    strings.h \
+    utils.h \
+    udp_service.h \
+    types.h
 
 FORMS += \
         ReceiverWindow.ui
