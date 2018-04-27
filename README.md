@@ -11,7 +11,7 @@ Qt NMEA Wrapper to show how to use libnmea-cpp
 
 This application supports 4 mode to launch:
 
-- _Standalone mode_: application _has_ input field and sent it to self (command: QtNMEA.exe)
+- _Standalone mode_: application _has_ input field and sending messages to self only (command: `QtNMEA.exe`)
 - _UDP Server mode_: application _has no_ input field and only receiving message (command: `QtNMEA.exe --server -i ip_address -p port`)
-- _UDP Cleint mode_: application _has_ input field and only receiving message (command: `QtNMEA.exe --client -i ip_address -p port`)
+- _UDP Client mode_: application _has_ input field and only sending message (command: `QtNMEA.exe --client -i ip_address -p port`)
 - _COM Port mode_: application _has no_ input field and only receiving message (command: `QtNMEA.exe --com -i COMN`)
