@@ -10,14 +10,20 @@
 #include "utils.h"
 #include <QThread>
 
-bool ComPortReader::Initialize(const QString &sAddress, const QString &sPort)
+bool ComPortReader::Initialize(const Configuration &oConfig)
 {
-    QString sTempAddress(sAddress);
+    QString sTempAddress(oConfig.GetAddress());
     if (sTempAddress.isEmpty())
         sTempAddress = "COM1";
     if (!Utils::IsComPort(sTempAddress)) return false;
 
     m_oSerialPort.setPortName(sTempAddress);
+    /* Typical configuration */
+    m_oSerialPort.setBaudRate(4800, QSerialPort::Input);
+    m_oSerialPort.setDataBits(QSerialPort::Data8);
+    m_oSerialPort.setParity(QSerialPort::NoParity);
+    m_oSerialPort.setStopBits(QSerialPort::OneStop);
+
     if (!m_oSerialPort.open(QIODevice::ReadOnly)) return false;
 
     connect(&m_oSerialPort, SIGNAL(readyRead()), this, SLOT(ReadComPort()));
@@ -48,7 +54,7 @@ void ComPortReader::ReadComPort()
 }
 
 ComPortReader::ComPortReader(QObject *parent) :
-    UDPInterface(parent),
+    ConnectionInterface(parent),
     m_oSerialPort()
 {
 }

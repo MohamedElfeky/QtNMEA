@@ -9,14 +9,14 @@
 #include "ReceiverWindow.h"
 
 UDPClient::UDPClient(QObject *parent) :
-    UDPInterface(parent),
+    ConnectionInterface(parent),
     UDPBase()
 {
 }
 
-bool UDPClient::Initialize(const QString &sAddress, const QString &sPort)
+bool UDPClient::Initialize(const Configuration &oConfig)
 {
-    return UDPBase::Connect(sAddress, sPort);
+    return UDPBase::Connect(oConfig.GetAddress(), oConfig.GetPort());
 }
 
 void UDPClient::Bind(const GPSDataAdapter &oDataAdapter, const ReceiverWindow &oWindow)

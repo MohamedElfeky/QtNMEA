@@ -7,34 +7,34 @@
 #ifndef UDP_DUMMY_H
 #define UDP_DUMMY_H
 
-#include "udp_interface.h"
+#include "connection_interface.h"
 
-class UDPDummy : public UDPInterface
+class DummyLayer : public ConnectionInterface
 {
     Q_OBJECT
 public:
-    inline virtual bool Initialize(const QString& sAddress, const QString& sPort) override;
+    inline virtual bool Initialize(const Configuration& oConfig) override;
     virtual void Bind(const GPSDataAdapter& oDataAdapter, const ReceiverWindow& oWindow) override;
     inline virtual QString GetInfo() const override;
     inline virtual bool IsValid() const override;
 
 protected:
-    friend class QSharedPointer<UDPDummy>;
-    explicit UDPDummy(QObject *parent = nullptr);
+    friend class QSharedPointer<DummyLayer>;
+    explicit DummyLayer(QObject *parent = nullptr);
 };
 
 // Not needed for dummy layer
-bool UDPDummy::Initialize(const QString &sAddress, const QString &sPort)
+bool DummyLayer::Initialize(const Configuration &oConfig)
 {
     return true;
 }
 
-QString UDPDummy::GetInfo() const
+QString DummyLayer::GetInfo() const
 {
     return "Standalone Mode";
 }
 
-bool UDPDummy::IsValid() const
+bool DummyLayer::IsValid() const
 {
     return true;
 }

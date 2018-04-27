@@ -4,11 +4,11 @@
  * Copyright 2018, All rights reserved
  */
 
-#include "udp_dummy.h"
+#include "dummy_layer.h"
 #include "gpsdata_adapter.h"
 #include "ReceiverWindow.h"
 
-void UDPDummy::Bind(const GPSDataAdapter &oDataAdapter, const ReceiverWindow &oWindow)
+void DummyLayer::Bind(const GPSDataAdapter &oDataAdapter, const ReceiverWindow &oWindow)
 {
     QObject::connect(&oDataAdapter, SIGNAL(Changed(GPSDataAdapter)), &oWindow, SLOT(GPSDataChanged(GPSDataAdapter)));
     QObject::connect(&oDataAdapter, SIGNAL(ParseError(QString,QString)), &oWindow, SLOT(GPSDataParseError(QString,QString)));
@@ -16,7 +16,7 @@ void UDPDummy::Bind(const GPSDataAdapter &oDataAdapter, const ReceiverWindow &oW
     QObject::connect(&oWindow, SIGNAL(SentenceSend(QString)), &oDataAdapter, SLOT(ReceiveSentence(QString)));
 }
 
-UDPDummy::UDPDummy(QObject *parent) :
-    UDPInterface(parent)
+DummyLayer::DummyLayer(QObject *parent) :
+    ConnectionInterface(parent)
 {
 }

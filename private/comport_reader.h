@@ -7,10 +7,10 @@
 #ifndef COMPORT_READER_H
 #define COMPORT_READER_H
 
-#include "udp_interface.h"
+#include "connection_interface.h"
 #include <QSerialPort>
 
-class ComPortReader : public UDPInterface
+class ComPortReader : public ConnectionInterface
 {
     Q_OBJECT
 public:
@@ -18,7 +18,7 @@ public:
      * @param sAddress = COM{N}
      * @param sPort is unused
      */
-    virtual bool Initialize(const QString& sAddress, const QString& sPort = "");
+    virtual bool Initialize(const Configuration &oConfig);
     virtual void Bind(const GPSDataAdapter& oDataAdapter, const ReceiverWindow& oWindow);
     inline virtual QString GetInfo() const;
     virtual bool IsValid() const;

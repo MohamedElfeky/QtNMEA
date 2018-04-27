@@ -7,14 +7,14 @@
 #ifndef UDP_SERVER_H
 #define UDP_SERVER_H
 
-#include "udp_interface.h"
+#include "connection_interface.h"
 #include "udp_base.h"
 
-class UDPServer : public UDPInterface, private UDPBase
+class UDPServer : public ConnectionInterface, private UDPBase
 {
     Q_OBJECT
 public:
-    virtual bool Initialize(const QString& sAddress, const QString& sPort) override;
+    virtual bool Initialize(const Configuration& oConfig) override;
     virtual void Bind(const GPSDataAdapter& oDataAdapter, const ReceiverWindow& oWindow) override;
     inline virtual QString GetInfo() const override;
     virtual bool IsValid() const override;

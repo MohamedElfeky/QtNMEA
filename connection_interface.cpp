@@ -4,17 +4,17 @@
  * Copyright 2018, All rights reserved
  */
 
-#include "udp_interface.h"
+#include "connection_interface.h"
 #include "private/udp_server.h"
 #include "private/udp_client.h"
-#include "private/udp_dummy.h"
+#include "private/dummy_layer.h"
 #include "private/comport_reader.h"
 
-UDPInterfacePtr UDPInterface::CreateInstance(ApplicationMode eMode)
+ConnectionInterfacePtr ConnectionInterface::CreateInstance(ApplicationMode eMode)
 {
     switch (eMode) {
     case ApplicationMode::STANDALONE:
-        return QSharedPointer<UDPDummy>::create();
+        return QSharedPointer<DummyLayer>::create();
     case ApplicationMode::UDP_CLIENT:
         return QSharedPointer<UDPClient>::create();
     case ApplicationMode::UDP_SERVER:

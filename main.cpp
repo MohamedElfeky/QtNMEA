@@ -7,7 +7,7 @@
 #include "ReceiverWindow.h"
 #include <QApplication>
 #include "gpsdata_adapter.h"
-#include "udp_interface.h"
+#include "connection_interface.h"
 #include "configuration.h"
 
 int main(int argc, char *argv[])
@@ -17,14 +17,14 @@ int main(int argc, char *argv[])
     ReceiverWindow oWindow;
     oWindow.show();
 
-    UDPInterfacePtr pUdpService = UDPInterface::CreateInstance(oConfig.GetMode());
-    if (!pUdpService) return 1;
+    ConnectionInterfacePtr pService = ConnectionInterface::CreateInstance(oConfig.GetMode());
+    if (!pService) return 1; // no connection created, should not be ever fired
 
-    GPSDataAdapter oGPSData;
-    pUdpService->Initialize(oConfig.GetAddress(), oConfig.GetPort());
-    pUdpService->Bind(oGPSData, oWindow);
+    GPSDataAdapter oGPSData; // input data handler
+    if (!pService->Initialize(oConfig)) return 2; // incorrect input parameters
+    pService->Bind(oGPSData, oWindow);
 
-    oWindow.SetLabelMode( pUdpService->GetInfo() );
+    oWindow.SetLabelMode( pService->GetInfo() );
     oWindow.HideSendBlock( oConfig.GetMode() );
 
     return a.exec();

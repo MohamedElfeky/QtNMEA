@@ -21,8 +21,8 @@ public:
 
     /*
      * Find keywords in params
-     * --server | --client
-     * -i ip_address
+     * --server | --client | --com
+     * -i ip_address | com_port
      * -p port
      */
     void Initialize(int argc, char* argv[]);

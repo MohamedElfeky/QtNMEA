@@ -9,27 +9,28 @@
 
 #include <QObject>
 #include "types.h"
+#include "configuration.h"
 
 class GPSDataAdapter;
 class ReceiverWindow;
 class QString;
 
-class UDPInterface;
-typedef QSharedPointer<UDPInterface> UDPInterfacePtr;
+class ConnectionInterface;
+typedef QSharedPointer<ConnectionInterface> ConnectionInterfacePtr;
 
 /*
  * UDP interface
  * Class provides layer to connect GPSDataAdapter with Window via UDP or Direct connections
  */
-class UDPInterface : public QObject
+class ConnectionInterface : public QObject
 {
     Q_OBJECT
 public:
-    virtual ~UDPInterface() {}
+    virtual ~ConnectionInterface() {}
     // Select instance by mode
-    static UDPInterfacePtr CreateInstance(ApplicationMode eMode = ApplicationMode::STANDALONE);
+    static ConnectionInterfacePtr CreateInstance(ApplicationMode eMode = ApplicationMode::STANDALONE);
     // Initialize parameters and connect if needed
-    virtual bool Initialize(const QString& sAddress, const QString& sPort) = 0;
+    virtual bool Initialize(const Configuration& oConfig) = 0;
     // Bind signals/slots
     virtual void Bind(const GPSDataAdapter& oDataAdapter, const ReceiverWindow& oWindow) = 0;
     // Info string, just for visualization
@@ -38,7 +39,7 @@ public:
     virtual bool IsValid() const = 0;
 
 protected:
-    explicit UDPInterface(QObject *parent = nullptr) : QObject(parent) {}
+    explicit ConnectionInterface(QObject *parent = nullptr) : QObject(parent) {}
 };
 
 #endif // UDP_INTERFACE_H

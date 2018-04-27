@@ -29,12 +29,12 @@ SOURCES += \
     gpsdata_adapter.cpp \
     utils.cpp \
     private/udp_client.cpp \
-    private/udp_dummy.cpp \
-    udp_interface.cpp \
     private/udp_server.cpp \
     private/udp_base.cpp \
     configuration.cpp \
-    private/comport_reader.cpp
+    private/comport_reader.cpp \
+    connection_interface.cpp \
+    private/dummy_layer.cpp
 
 HEADERS += \
         ReceiverWindow.h \
@@ -43,12 +43,12 @@ HEADERS += \
     utils.h \
     types.h \
     private/udp_client.h \
-    private/udp_dummy.h \
-    udp_interface.h \
     private/udp_server.h \
     private/udp_base.h \
     configuration.h \
-    private/comport_reader.h
+    private/comport_reader.h \
+    connection_interface.h \
+    private/dummy_layer.h
 
 FORMS += \
         ReceiverWindow.ui

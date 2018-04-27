@@ -9,14 +9,14 @@
 #include "ReceiverWindow.h"
 
 UDPServer::UDPServer(QObject *parent) :
-    UDPInterface(parent),
+    ConnectionInterface(parent),
     UDPBase()
 {
 }
 
-bool UDPServer::Initialize(const QString &sAddress, const QString &sPort)
+bool UDPServer::Initialize(const Configuration &oConfig)
 {
-    if (UDPBase::Connect(sAddress, sPort)) {
+    if (UDPBase::Connect(oConfig.GetAddress(), oConfig.GetPort())) {
         connect(m_pSocket.data(), SIGNAL(readyRead()), this, SLOT(ReadSocket()));
         return true;
     }
