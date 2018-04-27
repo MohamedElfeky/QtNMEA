@@ -29,7 +29,7 @@ void ReceiverWindow::SetLabelMode(const QString &sMode)
 void ReceiverWindow::HideSendBlock(ApplicationMode eMode)
 {
     switch(eMode) {
-    case ApplicationMode::SERVER:
+    case ApplicationMode::UDP_SERVER:
     case ApplicationMode::COMPORT_READER:
         ui->editSentence->hide();
         ui->btnSend->hide();

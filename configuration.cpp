@@ -24,9 +24,9 @@ void Configuration::Initialize(int argc, char *argv[])
     for(int i = 0; i < argc; i++) {
         QString sItem(argv[i]);
         if (sItem == "--server") {
-            m_eMode = ApplicationMode::SERVER;
+            m_eMode = ApplicationMode::UDP_SERVER;
         } else if (sItem == "--client") {
-            m_eMode = ApplicationMode::CLIENT;
+            m_eMode = ApplicationMode::UDP_CLIENT;
         } else if (sItem == "--com") {
             m_eMode = ApplicationMode::COMPORT_READER;
         } else if (i < (argc - 1) && sItem.size() == 2 && sItem[0] == '-') {

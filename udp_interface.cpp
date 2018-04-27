@@ -15,9 +15,9 @@ UDPInterfacePtr UDPInterface::CreateInstance(ApplicationMode eMode)
     switch (eMode) {
     case ApplicationMode::STANDALONE:
         return QSharedPointer<UDPDummy>::create();
-    case ApplicationMode::CLIENT:
+    case ApplicationMode::UDP_CLIENT:
         return QSharedPointer<UDPClient>::create();
-    case ApplicationMode::SERVER:
+    case ApplicationMode::UDP_SERVER:
         return QSharedPointer<UDPServer>::create();
     case ApplicationMode::COMPORT_READER:
         return QSharedPointer<ComPortReader>::create();

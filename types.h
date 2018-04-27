@@ -10,8 +10,8 @@
 enum class ApplicationMode
 {
     STANDALONE,
-    SERVER,
-    CLIENT,
+    UDP_SERVER,
+    UDP_CLIENT,
     COMPORT_READER
 };
 
