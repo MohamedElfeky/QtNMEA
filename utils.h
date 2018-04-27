@@ -19,6 +19,8 @@ public:
     static bool IsNumber(const QString& sTest);
     // String matches mask \d{1,3}.\d{1,3}.\d{1,3}.\d{1,3}
     static bool IsIpAddress(const QString& sAddress);
+    // Check string to mask COM{N}
+    static bool IsComPort(const QString& sAddress);
 };
 
 #endif // UTILS_H

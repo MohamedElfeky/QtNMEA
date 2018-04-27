@@ -28,10 +28,13 @@ void ReceiverWindow::SetLabelMode(const QString &sMode)
 
 void ReceiverWindow::HideSendBlock(ApplicationMode eMode)
 {
-    if (eMode != ApplicationMode::SERVER) return;
-
-    ui->editSentence->hide();
-    ui->btnSend->hide();
+    switch(eMode) {
+    case ApplicationMode::SERVER:
+    case ApplicationMode::COMPORT_READER:
+        ui->editSentence->hide();
+        ui->btnSend->hide();
+        break;
+    }
 }
 
 void ReceiverWindow::GPSDataChanged(const GPSDataAdapter& oData)

@@ -8,6 +8,7 @@
 #include "private/udp_server.h"
 #include "private/udp_client.h"
 #include "private/udp_dummy.h"
+#include "private/comport_reader.h"
 
 UDPInterfacePtr UDPInterface::CreateInstance(ApplicationMode eMode)
 {
@@ -18,6 +19,8 @@ UDPInterfacePtr UDPInterface::CreateInstance(ApplicationMode eMode)
         return QSharedPointer<UDPClient>::create();
     case ApplicationMode::SERVER:
         return QSharedPointer<UDPServer>::create();
+    case ApplicationMode::COMPORT_READER:
+        return QSharedPointer<ComPortReader>::create();
     }
 
     return nullptr;

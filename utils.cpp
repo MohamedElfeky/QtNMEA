@@ -18,3 +18,9 @@ bool Utils::IsIpAddress(const QString &sAddress)
     QRegExp oRegExp("\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}");
     return oRegExp.exactMatch(sAddress);
 }
+
+bool Utils::IsComPort(const QString &sAddress)
+{
+    QRegExp oRegExp("COM\\d{1,2}");
+    return oRegExp.exactMatch(sAddress);
+}

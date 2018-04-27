@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui network
+QT       += core gui network serialport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -33,7 +33,8 @@ SOURCES += \
     udp_interface.cpp \
     private/udp_server.cpp \
     private/udp_base.cpp \
-    configuration.cpp
+    configuration.cpp \
+    private/comport_reader.cpp
 
 HEADERS += \
         ReceiverWindow.h \
@@ -46,7 +47,8 @@ HEADERS += \
     udp_interface.h \
     private/udp_server.h \
     private/udp_base.h \
-    configuration.h
+    configuration.h \
+    private/comport_reader.h
 
 FORMS += \
         ReceiverWindow.ui

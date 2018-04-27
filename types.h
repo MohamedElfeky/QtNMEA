@@ -11,7 +11,8 @@ enum class ApplicationMode
 {
     STANDALONE,
     SERVER,
-    CLIENT
+    CLIENT,
+    COMPORT_READER
 };
 
 #endif // TYPES_H
